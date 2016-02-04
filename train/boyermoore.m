@@ -13,33 +13,34 @@ while i < size(pattern,2) + 1
     badchar(1,pattern(1,i)) = i;
     i = i + 1;
 end
+
+disp(badchar);
 %========================================================================
 m = size(pattern,2);
 n = size(big,2);
 
-s=1;
-while s <= (n-m)
-    j = m-1;
-  
-    
-    while j > 0 && (pattern(1,j) == big(1,s+j))
-        disp(j);
-        j = j-1;
-    end
-    
-    
-        if j < 0
-            disp('pattern at + j');
-            if (s+m) < n
-                s = s + (m-badchar(1,big(1,s+m)));
-            else
-                s = s + 1;
-            end
-        else
-            s = s + max(1,j - badchar(1,big(1,s+j) + 1));
-        end      
-    index = [];
-end
+% s=0;
+% while s <= (n-m)
+%     j = m-1;
+%   
+%     disp((pattern(1,j)));
+%     disp(big(1,s+j));
+%     disp('------');
+%     while j >= 0 && (pattern(1,j) == big(1,s+j))
+%         j = j-1;
+%     end
+%         if j < 0
+%             disp('pattern at + j');
+%             if (s+m) < n
+%                 s = s + (m-badchar(1,big(1,s+m)));
+%             else
+%                 s = s + 1;
+%             end
+%         else
+%             s = s + max(1,j - badchar(1,big(1,s+j) + 1));
+%         end      
+%     index = [];
+% end
 
 
 
